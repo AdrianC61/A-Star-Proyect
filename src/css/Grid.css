@@ -1,0 +1,233 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.grid-wrapper {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(40px, 1fr));
+  grid-template-rows: repeat(var(--rows), minmax(40px, 1fr));
+  gap: 2px;
+  border-radius: 10px;
+  align-items: start;
+  justify-items: start;
+}
+
+.run-button {
+  margin-bottom: 20px;
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.run-button:hover {
+  background-color: #0056b3;
+}
+
+.run-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.message{
+  margin-bottom: 10px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 5px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cell.start {
+  background-color: green !important;
+  color: white;
+  font-weight: bold;
+}
+
+.cell.goal {
+  background-color: red !important;
+  color: white;
+  font-weight: bold;
+}
+
+.cell.obstacle {
+  background-color: black !important;
+  color: white !important;
+}
+
+.cell.path {
+  background-color: rgb(0, 183, 255);
+}
+
+.cell.explored {
+  background-color: yellow;
+}
+
+.car-img {
+  width: 35px;
+  height: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: repeat(var(--cols), minmax(40px, 1fr));
+  grid-template-rows: repeat(var(--rows), minmax(40px, 1fr));
+  background-color: #adaaaa;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  margin-left: 5%;
+  background: #adaaaa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.controls label {
+  font-weight: bold;
+}
+
+.controls select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 70%;
+}
+
+.grid-size-controls {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #adaaaa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grid-size-controls label {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.grid-size-controls input {
+  width: 60px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+.legend {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #333;
+}
+
+.legend h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.legend-container {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.legend-toggle {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.legend-toggle:hover {
+  background-color: #0056b3;
+}
+
+.legend {
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #333;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
