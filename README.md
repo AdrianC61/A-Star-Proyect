@@ -1,106 +1,71 @@
-# A Star Pathfinding App
+# Simulación del Algoritmo A* con React y Electron
 
-## Overview
-This is a desktop application that integrates an optimized A Star pathfinding algorithm. The app provides fast and efficient route calculations for grid structures, offering a clean and interactive interface to test and explore pathfinding solutions in real-time.
-
-## Technologies Used
-- **Electron**: For building the desktop application.
-- **React**: For creating the user interface.
-- **Node.js**: Backend logic and process management.
-- **Python**: Pathfinding algorithm backend.
-- **PyInstaller**: Used to compile the Python backend.
-
-## Features
-- Fast and optimized A* pathfinding algorithm.
-- Interactive grid for real-time testing.
-- Cross-platform compatibility via Electron.
+Este proyecto es una simulación interactiva del algoritmo A* para encontrar rutas óptimas en una cuadrícula. Utiliza **React** para la interfaz de usuario y **Electron** para empaquetarlo como una aplicación de escritorio.
 
 ---
 
-## Development Setup
+## Instalación y Configuración
 
-### Prerequisites
-Ensure you have the following installed on your machine:
-- [Node.js](https://nodejs.org/) (latest version recommended)
-- [Python 3](https://www.python.org/downloads/) (Ensure it is added to the system path)
-- [npm](https://www.npmjs.com/)
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/JaimeGR3/PROYECTO_A.git
-   cd PROYECTO_A
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Package the Python backend:
-   ```bash
-   cd src/lib
-   python -m PyInstaller --onefile a_star.py
-   ```
-   If PyInstaller is not installed, you can install it by running:
-    ```bash
-   pip install pyinstaller
-   ```
-   This will generate an executable `a_star.exe` in the `dist` folder.
-
-### Running the App in Development
-To start the application in development mode:
+### **1️ Clonar el Repositorio**
 ```bash
-npm electron-serve
+git clone https://github.com/AdrianC61/A-Star-Proyect.git
+cd A-Star-Proyect
+
 ```
 
-The Electron app will launch, showing the interactive grid for pathfinding tests.
+### **2 Instalar Dependencias**
+```bash
+npm install
+```
 
----
-<!--
-## Building the App for Production
+### **3️ Ejecutar en Modo Desarrollo**
+```bash
+npm start
+```
 
-To create an executable version of the app:
-
-1. Build the React frontend:
+### **4️ Construir la Aplicación**
 ```bash
 npm run build
 ```
 
-2. Navigate to the `./build/index.html` file and ensure the resource paths are relative. Modify the following lines as
-shown below:
-```html
-<script defer="defer" src="./static/js/main.1fabf1f2.js"></script>
-<link href="./static/css/main.36b3283a.css" rel="stylesheet">
-```
-
-3. Package the Electron application:
+Si deseas empaquetar la app para escritorio con **Electron**:
 ```bash
 npm run make
 ```
 
-The packaged app can be found in the `out` directory.
-
 ---
--->
-## Usage
 
-1. Launch the application.
-2. Define the starting and goal points on the grid.
-3. Click "Run A\*" to calculate the optimal path.
-4. The path will be highlighted in real-time on the grid.
-5. Click on grid cells to place or remove obstacles dynamically; the path will update automatically based on the
-changes.
-
-### Color Legend
-- **Blue**: The optimal path.
-- **Green**: Nodes considered when calculating the path.
-- **Red**: Blocked cells (obstacles).
+## Uso
+1. Define la cantidad de **filas** y **columnas** del grid.
+2. Haz clic en las celdas para agregar **obstáculos**.
+3. Selecciona la **posición inicial** y la **meta**.
+4. Presiona el botón **Ejecutar A*** para iniciar la simulación.
+5. Observa cómo el algoritmo encuentra el camino más corto.
 
 ---
 
+## Recursos Utilizados
+- **Carro animado:** `carro.gif`
+- **Ícono A*:** `star.webp`
+- **Explosión (fallo de ruta):** `explosion.gif`
 
-## Contributing
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements.
+Estos recursos deben estar en `src/images/`.
 
-## License
-This project has no license.
+---
 
+## Tecnologías Usadas
+- **React** (Interfaz de usuario)
+- **Framer Motion** (Animaciones)
+- **Electron** (Empaquetado como aplicación de escritorio)
+- **CSS Modules** (Estilizado)
+
+---
+
+## Notas
+- Asegúrate de que las imágenes `.gif` y `.webp` están correctamente incluidas en la carpeta `public` o `src/images`.
+- Si encuentras problemas al construir con `react-scripts build`, revisa que las rutas de los assets sean correctas.
+
+---
+
+## Licencia
+Este proyecto está bajo la licencia **MIT**.
